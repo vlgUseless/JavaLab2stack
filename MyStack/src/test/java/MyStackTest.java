@@ -85,4 +85,24 @@ public class MyStackTest {
         assertTrue(javaStack.isEmpty());
     }
 
+    @Test
+    @DisplayName("Проверка contains")
+    void testContains() {
+        myStack.push(10);
+        myStack.push(20);
+        myStack.push(30);
+
+        javaStack.push(10);
+        javaStack.push(20);
+        javaStack.push(30);
+
+        // Проверяем присутствие
+        assertEquals(javaStack.contains(10), myStack.contains(10));
+        assertEquals(javaStack.contains(20), myStack.contains(20));
+        assertEquals(javaStack.contains(30), myStack.contains(30));
+
+        // Проверяем отсутствие
+        assertEquals(javaStack.contains(40), myStack.contains(40));
+    }
+
 }
