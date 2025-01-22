@@ -90,5 +90,10 @@ public class MyStack<T> implements Iterable<T> {
     /**
      * Дополнительный метод, если нужно получить элемент по индексу.
      */
-    public T get(int index) {}
+    public T get(int index) {
+        if (index < 0 || index >= elements.size()) {
+            throw new IndexOutOfBoundsException("Индекс вне пределов стека");
+        }
+        return elements.get(index);
+    }
 }
