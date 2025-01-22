@@ -45,7 +45,9 @@ public class MyStack<T> implements Iterable<T> {
     /**
      * Проверяет, пуст ли стек.
      */
-    public boolean isEmpty() {}
+    public boolean isEmpty() {
+        return elements.isEmpty();
+    }
 
     /**
      * Возвращает текущий размер стека.
