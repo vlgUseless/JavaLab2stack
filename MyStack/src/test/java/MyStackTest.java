@@ -17,4 +17,22 @@ public class MyStackTest {
         myStack = new MyStack<>();
         javaStack = new Stack<>();
     }
+
+    @Test
+    @DisplayName("Проверка push и сравнение с java.util.Stack")
+    void testPush() {
+        myStack.push(10);
+        myStack.push(20);
+        myStack.push(30);
+
+        javaStack.push(10);
+        javaStack.push(20);
+        javaStack.push(30);
+
+        // Сравниваем размеры
+        assertEquals(javaStack.size(), myStack.size());
+
+        // Сравним верхние элементы
+        assertEquals(javaStack.peek(), myStack.peek());
+    }
 }
