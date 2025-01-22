@@ -52,7 +52,9 @@ public class MyStack<T> implements Iterable<T> {
     /**
      * Возвращает текущий размер стека.
      */
-    public int size() {}
+    public int size() {
+        return elements.size();
+    }
 
     /**
      * Проверяет, содержится ли элемент в стеке.
