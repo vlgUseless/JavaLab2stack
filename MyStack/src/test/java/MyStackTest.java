@@ -105,4 +105,30 @@ public class MyStackTest {
         assertEquals(javaStack.contains(40), myStack.contains(40));
     }
 
+    @Test
+    @DisplayName("Проверка add (аналог push) и remove(Object) ")
+    void testAddAndRemove() {
+        // add -> добавляем
+        myStack.add(1);
+        myStack.add(2);
+        myStack.add(3);
+
+        javaStack.add(1);
+        javaStack.add(2);
+        javaStack.add(3);
+
+        // remove(Object) -> удаляем элемент 2
+        myStack.remove(Integer.valueOf(2));
+        javaStack.remove(Integer.valueOf(2));
+
+        // Сравним размеры
+        assertEquals(javaStack.size(), myStack.size());
+
+        // Убедимся, что элемента 2 больше нет
+        assertEquals(javaStack.contains(2), myStack.contains(2));
+        // Остальные элементы на месте
+        assertEquals(javaStack.contains(1), myStack.contains(1));
+        assertEquals(javaStack.contains(3), myStack.contains(3));
+    }
+
 }
