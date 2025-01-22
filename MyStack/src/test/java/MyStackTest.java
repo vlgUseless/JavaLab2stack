@@ -58,4 +58,31 @@ public class MyStackTest {
         assertThrows(EmptyStackException.class, () -> myStack.pop());
         assertThrows(EmptyStackException.class, () -> javaStack.pop());
     }
+
+    @Test
+    @DisplayName("Проверка isEmpty и size")
+    void testIsEmptyAndSize() {
+        // Изначально пустые
+        assertTrue(myStack.isEmpty());
+        assertTrue(javaStack.isEmpty());
+        assertEquals(javaStack.size(), myStack.size());
+
+        // Добавим элемент
+        myStack.push(999);
+        javaStack.push(999);
+
+        // Теперь оба стека не пустые
+        assertFalse(myStack.isEmpty());
+        assertFalse(javaStack.isEmpty());
+        assertEquals(javaStack.size(), myStack.size());
+
+        // Удалим элемент
+        myStack.pop();
+        javaStack.pop();
+
+        // Снова должны быть пустые
+        assertTrue(myStack.isEmpty());
+        assertTrue(javaStack.isEmpty());
+    }
+
 }
