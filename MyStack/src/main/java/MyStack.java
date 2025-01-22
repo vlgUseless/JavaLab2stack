@@ -59,7 +59,9 @@ public class MyStack<T> implements Iterable<T> {
     /**
      * Проверяет, содержится ли элемент в стеке.
      */
-    public boolean contains(T item) {}
+    public boolean contains(T item) {
+        return elements.contains(item);
+    }
 
     /**
      * Для соответствия требованиям:
