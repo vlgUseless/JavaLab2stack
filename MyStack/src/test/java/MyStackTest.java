@@ -35,4 +35,27 @@ public class MyStackTest {
         // Сравним верхние элементы
         assertEquals(javaStack.peek(), myStack.peek());
     }
+
+    @Test
+    @DisplayName("Проверка pop и сравнение с java.util.Stack")
+    void testPop() {
+        myStack.push(1);
+        myStack.push(2);
+
+        javaStack.push(1);
+        javaStack.push(2);
+
+        // Сначала удалим верхний элемент и сравним
+        assertEquals(javaStack.pop(), myStack.pop());
+        // И второй
+        assertEquals(javaStack.pop(), myStack.pop());
+
+        // Проверим, что оба стека теперь пустые
+        assertTrue(myStack.isEmpty());
+        assertTrue(javaStack.isEmpty());
+
+        // Убедимся, что при pop из пустого стека бросается EmptyStackException
+        assertThrows(EmptyStackException.class, () -> myStack.pop());
+        assertThrows(EmptyStackException.class, () -> javaStack.pop());
+    }
 }
