@@ -35,7 +35,12 @@ public class MyStack<T> implements Iterable<T> {
      * @return верхний элемент
      * @throws EmptyStackException если стек пуст
      */
-    public T peek() {}
+    public T peek() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return elements.getLast();
+    }
 
     /**
      * Проверяет, пуст ли стек.
