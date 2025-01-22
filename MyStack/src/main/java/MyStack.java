@@ -22,7 +22,13 @@ public class MyStack<T> implements Iterable<T> {
      * @return верхний элемент
      * @throws EmptyStackException если стек пуст
      */
-    public T pop() {}
+    public T pop() {
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        // удаляем элемент с конца списка (верх стека)
+        return elements.removeLast();
+    }
 
     /**
      * Возвращает верхний элемент стека, не удаляя его.
