@@ -83,7 +83,9 @@ public class MyStack<T> implements Iterable<T> {
      * Возвращает итератор по элементам стека (от первого добавленного к последнему).
      */
     @Override
-    public Iterator<T> iterator() {}
+    public Iterator<T> iterator() {
+        return elements.iterator();
+    }
 
     /**
      * Дополнительный метод, если нужно получить элемент по индексу.
