@@ -67,12 +67,17 @@ public class MyStack<T> implements Iterable<T> {
      * Для соответствия требованиям:
      * Аналог push (добавляем элемент в стек).
      */
-    public boolean add(T item) {}
+    public boolean add(T item) {
+        push(item);
+        return true;
+    }
 
     /**
      * Удаляет из стека первый встретившийся элемент.
      */
-    public boolean remove(Object o) {}
+    public boolean remove(Object o) {
+        return elements.remove(o);
+    }
 
     /**
      * Возвращает итератор по элементам стека (от первого добавленного к последнему).
