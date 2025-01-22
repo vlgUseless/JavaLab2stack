@@ -131,4 +131,28 @@ public class MyStackTest {
         assertEquals(javaStack.contains(3), myStack.contains(3));
     }
 
+    @Test
+    @DisplayName("Проверка get(int index)")
+    void testGet() {
+        myStack.add(5);
+        myStack.add(6);
+        myStack.add(7);
+
+        javaStack.add(5);
+        javaStack.add(6);
+        javaStack.add(7);
+
+        // Сравниваем доступ по индексу
+        assertEquals(javaStack.get(0), myStack.get(0));
+        assertEquals(javaStack.get(1), myStack.get(1));
+        assertEquals(javaStack.get(2), myStack.get(2));
+
+        // Проверка выхода за границы
+        assertThrows(IndexOutOfBoundsException.class, () -> myStack.get(-1));
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> javaStack.get(-1));
+
+        // И аналогично для слишком больших индексов
+        assertThrows(IndexOutOfBoundsException.class, () -> myStack.get(100));
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> javaStack.get(100));
+    }
 }
