@@ -13,7 +13,9 @@ public class MyStack<T> implements Iterable<T> {
     /**
      * Добавляет элемент в верх стека.
      */
-    public void push(T item) {}
+    public void push(T item) {
+        elements.add(item);
+    }
 
     /**
      * Извлекает верхний элемент стека.
